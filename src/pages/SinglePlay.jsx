@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/try.css";
+import "../styles/common.css";
 import "../styles/subnav.css";
 import ytlogo from "../assets/logo.svg";
 import { useState, useEffect, useRef } from "react";
@@ -30,10 +30,11 @@ import { alpha } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
 import TapAndPlayIcon from "@mui/icons-material/TapAndPlay";
 import { useDispatch } from "react-redux";
-import Explore from "../components/Explore";
+import SinglePlay from "../components/Single";
 import { useNavigate } from "react-router-dom";
 import LoginButton from "../components/LoginButt";
 import Badge from "@mui/material/Badge";
+
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -169,11 +170,10 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-export default function TryExplore() {
+export default function TrHome() {
   const userrData = JSON.parse(localStorage.getItem("loginStatus"));
-  const navigate = useNavigate();
+  const [searchValue, setSearchValue] = useState("");
   const menuSt = useRef(false);
-  //const theme = useTheme();
   const [open, setOpen] = React.useState(true);
   const dispatch = useDispatch();
   const [main_router_val, setMainVal] = useState("Home");
@@ -184,10 +184,14 @@ export default function TryExplore() {
   useEffect(() => {
     dispatch(frontRtReducer);
   }, []);
+  const navigate = useNavigate();
 
   const handleDrawerOpen = () => {
     setOpen(true);
     menuSt.current = false;
+  };
+  const handleSearchValue = (e) => {
+    setSearchValue(e.target.value);
   };
 
   const handleDrawerClose = () => {
@@ -227,6 +231,8 @@ export default function TryExplore() {
               placeholder="Search songs, albums, artists, podcasts"
               inputProps={{ "aria-label": "search" }}
               sx={{ overflow: "hidden" }}
+              onChange={handleSearchValue}
+              searchValue={searchValue}
             />
           </Search>
           <Box
@@ -264,6 +270,7 @@ export default function TryExplore() {
             <img src={ytlogo} alt="logo" />
           </Box>
         </DrawerHeader>
+
         <List sx={{ background: "black", color: "white", height: "100%" }}>
           <ListItem key={"Home"} disablePadding sx={{ display: "block" }}>
             <ListItemButton
@@ -374,26 +381,16 @@ export default function TryExplore() {
               />
             </ListItemButton>
           </ListItem>
+
           {!menuSt.current ? (
             <>
               <div className="divider">
                 <Divider />
               </div>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  background: "black",
-                }}
-              >
-                <Button
-                  className="newPlaylist"
-                  startIcon={<AddIcon />}
-                  onClick={() => alert("functionality is in progress")}
-                >
-                  New playlist
-                </Button>
-              </Box>
+
+              <Button className="newPlaylist" startIcon={<AddIcon />}>
+                New playlist
+              </Button>
             </>
           ) : null}
         </List>
@@ -410,8 +407,8 @@ export default function TryExplore() {
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
 
-        <Box div className="home-container">
-          <Explore />
+        <Box className="home-container">
+          <SinglePlay></SinglePlay>
         </Box>
       </Box>
     </Box>

@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/try.css";
+import "../styles/common.css";
 import "../styles/subnav.css";
 import ytlogo from "../assets/logo.svg";
 import { useState, useEffect, useRef } from "react";
@@ -30,9 +30,9 @@ import { alpha } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
 import TapAndPlayIcon from "@mui/icons-material/TapAndPlay";
 import { useDispatch } from "react-redux";
-import Library from "../components/Library";
 import { useNavigate } from "react-router-dom";
 import LoginButton from "../components/LoginButt";
+import Musicpage from "../components/MusicPage";
 import Badge from "@mui/material/Badge";
 
 
@@ -170,11 +170,10 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-export default function TryLib() {
+function Musicplay() {
   const userrData = JSON.parse(localStorage.getItem("loginStatus"));
   const navigate = useNavigate();
   const menuSt = useRef(false);
-  //const theme = useTheme();
   const [open, setOpen] = React.useState(true);
   const dispatch = useDispatch();
   const [main_router_val, setMainVal] = useState("Home");
@@ -380,21 +379,10 @@ export default function TryLib() {
               <div className="divider">
                 <Divider />
               </div>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  background: "black",
-                }}
-              >
-                <Button
-                  className="newPlaylist"
-                  startIcon={<AddIcon />}
-                  onClick={() => alert("functionality is in progress")}
-                >
-                  New playlist
-                </Button>
-              </Box>
+
+              <Button className="newPlaylist" startIcon={<AddIcon />}>
+                New playlist
+              </Button>
             </>
           ) : null}
         </List>
@@ -412,9 +400,20 @@ export default function TryLib() {
         <DrawerHeader />
 
         <Box div className="home-container">
-          <Library />
+          <Button
+            variant="outlined"
+            color="primary"
+            className="backBtn2"
+            onClick={() => navigate(-1)}
+          >
+            Back
+          </Button>
+          <Musicpage />
+          {/* <h1>working</h1> */}
         </Box>
       </Box>
     </Box>
   );
 }
+
+export default Musicplay;

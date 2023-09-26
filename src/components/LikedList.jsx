@@ -86,7 +86,7 @@ const TryLikedPlayList = () => {
       ) : (
         <div className="EmptyErr">
           <Button variant="contained" className="backBtn" onClick={() => navigate(-1)} color="primary">Back</Button>
-          <span className="loader2">Playlist is Empty OR user is not Logged in</span>
+          <span className="loader2">Empty</span>
         </div>
       )}
     </div>

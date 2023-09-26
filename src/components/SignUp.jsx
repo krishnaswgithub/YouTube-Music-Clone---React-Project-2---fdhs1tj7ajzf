@@ -29,14 +29,6 @@ const SignUp = () => {
     password: "",
     appType: "music",
   });
-  //const [res, setRes] = useState();
-
-  // const url = "https://academics.newtonschool.co/api/v1/user/signup";
-  // const headers = {
-  //   projectId: "z5civ6ptecws",
-  // };
-  // const method = "POST";
-  // const body = JSON.stringify({ ...signupDetails });
 
   const navigate = useNavigate();
 
@@ -149,7 +141,7 @@ const SignUp = () => {
           Sign up
         </button>
         <div className="social">
-          <span>already have an account ?</span>
+          <span>Already have an account ?</span>
           <div
             className="fb"
             onClick={() => {
@@ -160,8 +152,6 @@ const SignUp = () => {
           </div>
         </div>
       </form>
-
-      {/* ================================================= */}
       <div>
         <BootstrapDialog
           onClose={handleClose}
@@ -185,19 +175,16 @@ const SignUp = () => {
           </IconButton>
           <DialogContent dividers>
             <Typography gutterBottom>
-              Successfully resistered. Login for enjoy YouTube music advanced
-              facilities.
+            ✅ Successfully resistered...
             </Typography>
           </DialogContent>
           <DialogActions>
             <Button autoFocus onClick={handleClose}>
-              Login page
+              Login
             </Button>
           </DialogActions>
         </BootstrapDialog>
       </div>
-
-      {/* ================================================= */}
     </>
   );
 };

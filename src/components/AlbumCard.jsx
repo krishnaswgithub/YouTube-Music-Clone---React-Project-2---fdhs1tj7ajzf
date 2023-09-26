@@ -7,7 +7,6 @@ import "../styles/cards.css";
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
 import playIcon from "../assets/play (3).png";
-//import playIcon from "../assets/music.png";
 
 
 export default function ActionAreaCard(prop) {

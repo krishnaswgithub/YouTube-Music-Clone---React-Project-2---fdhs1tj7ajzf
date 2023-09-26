@@ -1,28 +1,15 @@
-import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
-import Switch from '@mui/material/Switch';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
-import { blueGrey } from '@mui/material/colors';
 import TapAndPlayIcon from '@mui/icons-material/TapAndPlay';
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -70,7 +57,7 @@ function Navbar() {
     return <>
         <AppBar component="nav"
         className='navigationbar'
-            sx={{ backgroundColor: "#090909" }, { height: "10vh" }}>
+            sx={{ backgroundColor: "#090909" , height: "10vh" }}>
             <Toolbar>
                 <IconButton
                     color="inherit"
@@ -108,7 +95,7 @@ function Navbar() {
                     </Button>
                 </Box>
                 <Box>
-                    <Avatar alt="AYUSH" src="#" />
+                    <Avatar alt="KRISHNA" src="#" />
                 </Box>
             </Toolbar>
         </AppBar>

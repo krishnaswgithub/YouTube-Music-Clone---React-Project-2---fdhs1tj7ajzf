@@ -311,7 +311,7 @@ export default function App() {
           <img className={isPlaying ? "img20" : "img2"} src={play} alt="" />
           <div>
             {songData ? <h3>{songData.title}</h3> : null}
-            <p>Shubh . 20M</p>
+            <p>25M • views</p>
           </div>
         </div>
         <div className="likes2">

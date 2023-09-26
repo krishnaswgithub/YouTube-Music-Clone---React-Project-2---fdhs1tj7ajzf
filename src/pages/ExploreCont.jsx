@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/try.css";
+import "../styles/common.css";
 import "../styles/subnav.css";
 import ytlogo from "../assets/logo.svg";
 import { useState, useEffect, useRef } from "react";
@@ -30,11 +30,10 @@ import { alpha } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
 import TapAndPlayIcon from "@mui/icons-material/TapAndPlay";
 import { useDispatch } from "react-redux";
-import LoginButton from "../components/LoginButt";
-import LikedPlaylist from "../components/LikedList";
+import Explore from "../components/Explore";
 import { useNavigate } from "react-router-dom";
+import LoginButton from "../components/LoginButt";
 import Badge from "@mui/material/Badge";
-
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -170,9 +169,9 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-export default function TryLiked() {
+function ExploreCont() {
   const userrData = JSON.parse(localStorage.getItem("loginStatus"));
-  const [searchValue, setSearchValue] = useState("");
+  const navigate = useNavigate();
   const menuSt = useRef(false);
   //const theme = useTheme();
   const [open, setOpen] = React.useState(true);
@@ -185,14 +184,10 @@ export default function TryLiked() {
   useEffect(() => {
     dispatch(frontRtReducer);
   }, []);
-  const navigate = useNavigate();
 
   const handleDrawerOpen = () => {
     setOpen(true);
     menuSt.current = false;
-  };
-  const handleSearchValue = (e) => {
-    setSearchValue(e.target.value);
   };
 
   const handleDrawerClose = () => {
@@ -232,8 +227,6 @@ export default function TryLiked() {
               placeholder="Search songs, albums, artists, podcasts"
               inputProps={{ "aria-label": "search" }}
               sx={{ overflow: "hidden" }}
-              onChange={handleSearchValue}
-              searchValue={searchValue}
             />
           </Search>
           <Box
@@ -271,7 +264,6 @@ export default function TryLiked() {
             <img src={ytlogo} alt="logo" />
           </Box>
         </DrawerHeader>
-
         <List sx={{ background: "black", color: "white", height: "100%" }}>
           <ListItem key={"Home"} disablePadding sx={{ display: "block" }}>
             <ListItemButton
@@ -382,16 +374,26 @@ export default function TryLiked() {
               />
             </ListItemButton>
           </ListItem>
-
           {!menuSt.current ? (
             <>
               <div className="divider">
                 <Divider />
               </div>
-
-              <Button className="newPlaylist" startIcon={<AddIcon />}>
-                New playlist
-              </Button>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  background: "black",
+                }}
+              >
+                <Button
+                  className="newPlaylist"
+                  startIcon={<AddIcon />}
+                  onClick={() => alert("functionality is in progress")}
+                >
+                  New playlist
+                </Button>
+              </Box>
             </>
           ) : null}
         </List>
@@ -408,10 +410,12 @@ export default function TryLiked() {
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
 
-        <Box className="home-container">
-          <LikedPlaylist></LikedPlaylist>
+        <Box div className="home-container">
+          <Explore />
         </Box>
       </Box>
     </Box>
   );
 }
+
+export default ExploreCont;

@@ -1,4 +1,4 @@
-import '../styles/spinner2.css'
+import '../styles/loader.css'
 
 const Spinner2=()=>{
     return <>

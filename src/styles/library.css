@@ -4,9 +4,9 @@
     padding-top:2vh;
     min-height: 90vh!important;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: row;
     flex-wrap: wrap;
-    /* justify-content:space-around; */
+    /* justify-content:row; */
     /* align-items: center; */
     gap:3vh;
     margin: 0 0 0 2vw;
@@ -25,7 +25,6 @@
     position: relative !important;
 }
 .likeMusicCard:hover{
-   /* scale:1.04; */
    transition: ease-in-out;
    transition-duration: 0.2s;
    .icon4{

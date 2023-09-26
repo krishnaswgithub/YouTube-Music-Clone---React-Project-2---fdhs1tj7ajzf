@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/try.css";
+import "../styles/common.css";
 import "../styles/subnav.css";
 import ytlogo from "../assets/logo.svg";
 import { useState, useEffect, useRef } from "react";
@@ -34,7 +34,6 @@ import { useNavigate } from "react-router-dom";
 import AlbumSongList from "../components/MusicList";
 import LoginButton from "../components/LoginButt";
 import Badge from "@mui/material/Badge";
-
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -170,7 +169,7 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-function AlbumMusicPage() {
+function AlbumPage() {
   const userrData = JSON.parse(localStorage.getItem("loginStatus"));
   const navigate = useNavigate();
   const menuSt = useRef(false);
@@ -419,4 +418,4 @@ function AlbumMusicPage() {
     </Box>
   );
 }
-export default AlbumMusicPage;
+export default AlbumPage;

@@ -1,4 +1,3 @@
-import * as React from "react";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 
@@ -8,6 +7,26 @@ const Subnav = () => {
     e.target.value && setMoodVal(e.target.value);
   };
   const mood = { value: moodVal };
+
+  const relax = () => {
+    return alert("This functionality will added further...")
+  }
+
+  const workout = () => {
+    return alert("This functionality will added further...")
+  }
+
+  const energize = () => {
+    return alert("This functionality will added further...")
+  }
+
+  const commute = () => {
+    return alert("This functionality will added further...")
+  }
+
+  const focus = () => {
+    return alert("This functionality will added further...")
+  }
   return (
     <>
       <div className="subnav" onClick={handleClick}>
@@ -15,36 +34,41 @@ const Subnav = () => {
           variant="outlined"
           value="relax"
           style={{ textTransform: "capitalize" }}
+          onClick={relax}
         >
-          Relax
+          Playlist
         </Button>
         <Button
           variant="outlined"
           value="work"
           style={{ textTransform: "capitalize" }}
+          onClick={workout}
         >
-          Workout
+          Podcasts
         </Button>
         <Button
           variant="outlined"
           value="energy"
           style={{ textTransform: "capitalize" }}
+          onClick={energize}
         >
-          Energize
+          Songs
         </Button>
         <Button
           variant="outlined"
           value="commute"
           style={{ textTransform: "capitalize" }}
+          onClick={commute}
         >
-          Commute
+          Album
         </Button>
         <Button
           variant="outlined"
           value="focus"
           style={{ textTransform: "capitalize" }}
+          onClick={focus}
         >
-          Focus
+          Artists
         </Button>
       </div>
     </>

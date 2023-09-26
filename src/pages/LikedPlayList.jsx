@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/try.css";
+import "../styles/common.css";
 import "../styles/subnav.css";
 import ytlogo from "../assets/logo.svg";
 import { useState, useEffect, useRef } from "react";
@@ -30,9 +30,9 @@ import { alpha } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
 import TapAndPlayIcon from "@mui/icons-material/TapAndPlay";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import LoginButton from "../components/LoginButt";
-import Musicpage from "../components/MusicPage";
+import LikedPlaylist from "../components/LikedList";
+import { useNavigate } from "react-router-dom";
 import Badge from "@mui/material/Badge";
 
 
@@ -170,9 +170,9 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-export default function TryLib() {
+function LikedPlayList() {
   const userrData = JSON.parse(localStorage.getItem("loginStatus"));
-  const navigate = useNavigate();
+  const [searchValue, setSearchValue] = useState("");
   const menuSt = useRef(false);
   const [open, setOpen] = React.useState(true);
   const dispatch = useDispatch();
@@ -184,10 +184,14 @@ export default function TryLib() {
   useEffect(() => {
     dispatch(frontRtReducer);
   }, []);
+  const navigate = useNavigate();
 
   const handleDrawerOpen = () => {
     setOpen(true);
     menuSt.current = false;
+  };
+  const handleSearchValue = (e) => {
+    setSearchValue(e.target.value);
   };
 
   const handleDrawerClose = () => {
@@ -227,6 +231,8 @@ export default function TryLib() {
               placeholder="Search songs, albums, artists, podcasts"
               inputProps={{ "aria-label": "search" }}
               sx={{ overflow: "hidden" }}
+              onChange={handleSearchValue}
+              searchValue={searchValue}
             />
           </Search>
           <Box
@@ -264,6 +270,7 @@ export default function TryLib() {
             <img src={ytlogo} alt="logo" />
           </Box>
         </DrawerHeader>
+
         <List sx={{ background: "black", color: "white", height: "100%" }}>
           <ListItem key={"Home"} disablePadding sx={{ display: "block" }}>
             <ListItemButton
@@ -374,6 +381,7 @@ export default function TryLib() {
               />
             </ListItemButton>
           </ListItem>
+
           {!menuSt.current ? (
             <>
               <div className="divider">
@@ -399,19 +407,12 @@ export default function TryLib() {
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
 
-        <Box div className="home-container">
-          <Button
-            variant="outlined"
-            color="primary"
-            className="backBtn2"
-            onClick={() => navigate(-1)}
-          >
-            Back
-          </Button>
-          <Musicpage />
-          {/* <h1>working</h1> */}
+        <Box className="home-container">
+          <LikedPlaylist></LikedPlaylist>
         </Box>
       </Box>
     </Box>
   );
 }
+
+export default LikedPlayList;

@@ -2,6 +2,9 @@ import "../styles/premium.css";
 import logo from "../assets/premium-logo.png";
 import { Button } from "@mui/material";
 const Prem = () => {
+  const free = () => {
+    return alert("Starting for 1 month free traial");
+  };
   return (
     <>
       <div className="prem-container">
@@ -47,7 +50,9 @@ const Prem = () => {
                   ₹99/month after trial
                 </p>
               </div>
-              <Button variant="contained">1 month free</Button>
+              <Button variant="contained" onClick={free}>
+                1 month free
+              </Button>
             </div>
             <p>
               Restrictions apply to certain features and vary by device,
@@ -58,11 +63,12 @@ const Prem = () => {
               Workspace Individual edition accounts, Google Workspace accounts
               are not eligible for trials unless they are signing up for Student
               subscriptions. Users can only sign up for one trial per payment
-              method.Learn more here.<br /> You’ll be automatically charged
-              the price listed unless you cancel during your trial, and then
-              every month starting on the first billing date until you cancel
-              your subscription. Cancel anytime. No refunds or credits for
-              partial billing periods. Refund policy <br />
+              method.Learn more here.
+              <br /> You’ll be automatically charged the price listed unless you
+              cancel during your trial, and then every month starting on the
+              first billing date until you cancel your subscription. Cancel
+              anytime. No refunds or credits for partial billing periods. Refund
+              policy <br />
               Family subscription: Invite up to 5 additional family members to
               join your Google family group and share your YouTube Music Premium
               and YouTube Premium subscription. All family members must be age

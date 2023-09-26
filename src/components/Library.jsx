@@ -1,6 +1,7 @@
 import '../styles/library.css';
-import LikedIcon from "../assets/likedmusic.jpg";
-import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
+import LikedIcon from "../assets/likedmusic.png";
+import SavedIcon from "../assets/saved-episodes.png";
+import PushPinIcon from '@mui/icons-material/PushPin';
 import PlayIcon from "../assets/play (3).png";
 import AlbumCard from "./AlbumCard";
 import { useNavigate } from "react-router";
@@ -16,14 +17,21 @@ const Library = () => {
 
   return (
     <div className="library">
-      <h2>All albums you have liked are here...</h2>
       <div className="likedSong">
         <div className="likeMusicCard" onClick={handleLikePlayList} >
           <img src={LikedIcon} alt="liked album" />
           <img className="icon4" src={PlayIcon} alt="icon" />
-          <h5>Your Favourites</h5>
+          <h5>Liked music</h5>
           <p>
-            <PlayCircleOutlineIcon /> Auto playlist
+            <PushPinIcon /> Auto playlist
+          </p>
+        </div>
+        <div className="likeMusicCard" onClick={handleLikePlayList} >
+          <img src={SavedIcon} alt="liked album" />
+          <img className="icon4" src={PlayIcon} alt="icon" />
+          <h5>Episodes for later</h5>
+          <p>
+            Episodes that you save for later
           </p>
         </div>
 

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Grid from "@mui/material/Grid";
 import playIcon from "../assets/play (4).png";
-import play from "../assets/play (2).png";
+import play from "../assets/play (3).png";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";

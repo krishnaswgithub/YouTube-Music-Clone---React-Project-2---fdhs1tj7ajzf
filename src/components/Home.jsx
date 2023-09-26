@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 //import { useDispatch } from 'react-redux';
 import { Grid } from "@mui/material";
 import Pagination from "@mui/material/Pagination";
-import Spinner from "./Spinner";
+import Spinner from "./Loader";
 import ActionAreaCard from "./AlbumCard";
 
 const Home = (prop) => {
@@ -55,7 +55,10 @@ const Home = (prop) => {
   return (
     <>
       {!prop.searchValue ? (
-        <h1 className="mix">Mix for you</h1>
+        <h1 className="mix">
+          <h5>SET THE MOOD RIGHT FOR A RELAXING NIGHT.</h5>
+          Late Night Serenity
+        </h1>
       ) : (
         <h1 className="mix">Your search</h1>
       )}

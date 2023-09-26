@@ -135,7 +135,7 @@ const Login = () => {
           aria-labelledby="responsive-dialog-title"
         >
           <DialogTitle id="responsive-dialog-title">
-            {'You logged in successfully....'}
+            {'✅ You logged in successfully....'}
           </DialogTitle>
           <DialogContent></DialogContent>
           <DialogActions>
@@ -154,7 +154,7 @@ const Login = () => {
           }}
           severity="error"
         >
-          User not found
+          ❌ User not found
         </Alert>
       </div>
     </>

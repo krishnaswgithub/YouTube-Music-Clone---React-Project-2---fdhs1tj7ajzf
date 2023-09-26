@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
 import SentimentSatisfiedIcon from '@mui/icons-material/SentimentSatisfied';
-import Spinner2 from './Spinner2';
+import Spinner2 from './Loader2';
 import Songcard from './Card';
 import { Pagination } from '@mui/material';
 

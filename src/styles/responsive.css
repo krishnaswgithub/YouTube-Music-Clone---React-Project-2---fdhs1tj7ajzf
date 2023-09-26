@@ -1,0 +1,14 @@
+@media screen and (max-width: 768px) {
+    .MuiDrawer-paper {
+      width: 80%; /* Adjust as needed */
+    }
+    .MuiBadge-root {
+        display: none;
+      }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .MuiBadge-root {
+      display: none;
+    }
+  }

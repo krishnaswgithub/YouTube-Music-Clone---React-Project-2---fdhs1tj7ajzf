@@ -1,5 +1,5 @@
 import * as React from "react";
-//import "../styles/try.css";
+import "../styles/common.css";
 import "../styles/subnav.css";
 import ytlogo from "../assets/logo.svg";
 import { useState, useEffect, useRef } from "react";
@@ -30,11 +30,11 @@ import { alpha } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
 import TapAndPlayIcon from "@mui/icons-material/TapAndPlay";
 import { useDispatch } from "react-redux";
-import Upgradee from "../components/Upgrade";
+
+import Prem from "../components/PremiumPage";
 import { useNavigate } from "react-router-dom";
 import LoginButton from "../components/LoginButt";
 import Badge from "@mui/material/Badge";
-
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -170,10 +170,10 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-export default function TryUpgrade() {
+function Premium() {
   const userrData = JSON.parse(localStorage.getItem("loginStatus"));
   const navigate = useNavigate();
-  const menuSt = useRef(true);
+  const menuSt = useRef(false);
   //const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const dispatch = useDispatch();
@@ -380,21 +380,9 @@ export default function TryUpgrade() {
               <div className="divider">
                 <Divider />
               </div>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  background: "black",
-                }}
-              >
-                <Button
-                  className="newPlaylist"
-                  startIcon={<AddIcon />}
-                  onClick={() => alert("functionality is in progress")}
-                >
-                  New playlist
-                </Button>
-              </Box>
+              <Button className="newPlaylist" startIcon={<AddIcon />}>
+                New playlist
+              </Button>
             </>
           )}
         </List>
@@ -412,9 +400,11 @@ export default function TryUpgrade() {
         <DrawerHeader />
 
         <Box div className="home-container">
-          <Upgradee />
+          <Prem />
         </Box>
       </Box>
     </Box>
   );
 }
+
+export default Premium;

@@ -20,7 +20,7 @@ const Upgradee = () => {
             <img src={YouTubeLOGO} alt="yt_logo" />
             <h1>Get Music Premium to listen to music <br />ad-free, offline & with your screen off</h1>
             <Button variant="contained" onClick={handleprem}>get music Premium</Button>
-            <h1>Prepaid and subscription plans available. Prices start <br />at ₹99.00/month. Free trials available with subscription plans only.</h1>
+            <h1>Prepaid and subscription plans available. Prices start at ₹99.00/month. Free trials available with subscription plans only.</h1>
             <p>Or save money with an annual, <span className='link-a'>family or student plan <br /> Restrictions apply. Learn more here.</span> </p>
         </div>
         <div className="first_poster">
