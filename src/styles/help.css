@@ -1,0 +1,64 @@
+/* .help{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    height: 500px;
+    width: 350px;
+    overflow: auto;
+}
+.top-header{
+    
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .close-button:hover {
+    color: #ff0000; 
+  } */
+
+  /* Right-bottom corner styles */
+  .right-bottom-corner {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 350px;
+    height: 500px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+  }
+  
+  /* Optional styles for the content inside the right-bottom corner */
+  .right-bottom-corner-content {
+    /* Add your styles here */
+  }
+  
+  /* Close button styles */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  /* Change the color of the close button when hovered */
+  .close-button:hover {
+    color: #ff0000; /* Change to your desired hover color */
+  }
+  

@@ -36,6 +36,8 @@ import Subnav from "../components/Home-sub-nav";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import LoginButton from "../components/LoginButt";
+import "../styles/avatarPopup.css";
+import { AvatarPopup } from "../components/AvatarPopup";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -201,6 +203,20 @@ function HomeCont() {
     menuSt.current = true;
   };
 
+  // const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  // const openModal = () => {
+  //   setModalIsOpen(true);
+  // };
+
+  // const closeModal = () => {
+  //   setModalIsOpen(false);
+  // };
+
+  const [openProfile, setOpenProfile] = useState(false);
+
+  
+
   return (
     <Box className="homeContainer">
       <CssBaseline />
@@ -257,7 +273,12 @@ function HomeCont() {
                   userrData?.status == "success" ? userrData?.data.name : null
                 }
                 src="#"
+                onClick={()=>setOpenProfile((prev)=>!prev)}
+                className="avatar"
               />
+              {
+                openProfile && <AvatarPopup/>
+              }
             </StyledBadge>
           </Box>
         </Toolbar>

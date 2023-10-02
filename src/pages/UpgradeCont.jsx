@@ -409,7 +409,6 @@ function UpgradeCont() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-
         <Box div className="home-container">
           <Upgradee />
         </Box>

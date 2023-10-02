@@ -1,0 +1,31 @@
+.dropDownProfile {
+  position: absolute;
+  top: 4.5rem;
+  right: 1.5rem;
+  width: 250px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: gray;
+
+}
+
+.dropDownProfile::before {
+  content: '';
+  position: absolute;
+  top: -0.7rem;
+  right: 1.7rem;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  background-color: gray;
+  border-left: 1px solid gray;
+  border-top: 1px solid gray;
+}
+
+.dropDownProfile Button{
+  color: white;
+}
+
+.dropDownProfile Button:hover{
+  color: purple;
+}

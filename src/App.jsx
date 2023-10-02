@@ -12,6 +12,7 @@ import Login from "./components/LoginPage";
 import Signup from "./components/SignUp";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+
 function App() {
   const likedSongArray = [];
   const libraryAlbum = [];
@@ -107,6 +108,14 @@ function App() {
         </>
       ),
     },
+    // {
+    //   path: "/help",
+    //   element: (
+    //     <>
+    //       <Help />
+    //     </>
+    //   ),
+    // }
   ]);
 
   return (
